@@ -1,6 +1,6 @@
-# Truus.co — Awwward-Winning Web Design Clone
+# Bulusan Zootopia
 
-A highly interactive, visually stunning recreation of the **Truus.co** website, rebuilt as a **Next.js + React** application. This project captures the bold aesthetics, playful interactivity, and smooth motion design characteristic of Awwward-winning websites — with every pixel and every frame of animation faithfully recreated.
+A highly interactive, visually stunning website for **Bulusan Zootopia**, an immersive nature game where you explore the wilderness and feed animals, rebuilt as a **Next.js + React** application. This project captures the bold aesthetics, playful interactivity, and smooth motion design characteristic of Awwward-winning websites — with every pixel and every frame of animation faithfully recreated.
 
 <table>
   <tr>
@@ -21,10 +21,10 @@ A highly interactive, visually stunning recreation of the **Truus.co** website, 
 
 ## 🚀 Overview
 
-This project is a high-fidelity clone of the Truus advertising agency website. The codebase was originally built in vanilla HTML/CSS/JS and has been **fully transformed to Next.js 15 + React 19**, with all animations, interactions, and assets ported 1:1.
+This project is a high-fidelity website for Bulusan Zootopia — a nature exploration game where you explore the wild and feed animals treats. The codebase was originally built in vanilla HTML/CSS/JS and has been **fully transformed to Next.js 15 + React 19**, with all animations, interactions, and assets ported 1:1.
 
 ### ⚠️ Note on the Hero Video
-The original Truus.co website uses a privately-hosted Vimeo video. Due to **Vimeo's Domain-Level Privacy Settings**, the video is restricted to the `truus.co` domain. The hero component uses a standard HTML5 `<video>` element with the `src` commented out, rendering a solid dark background. Place your `.mp4` in `public/` and update the source in `VimeoHero.jsx`.
+The original site uses a privately-hosted Vimeo video. Due to **Vimeo's Domain-Level Privacy Settings**, the video is restricted to the original domain. The hero component uses a standard HTML5 `<video>` element with the `src` commented out, rendering a solid dark background. Place your `.mp4` in `public/` and update the source in `VimeoHero.jsx`.
 
 ---
 
@@ -70,7 +70,7 @@ The original Truus.co website uses a privately-hosted Vimeo video. Due to **Vime
 ## 📦 Project Structure
 
 ```text
-truus/
+bulusan-zootopia/
 ├── app/
 │   ├── styles/                  # Modular CSS partials
 │   │   ├── base.css             # Fonts, CSS variables, reset, body/html
@@ -168,11 +168,11 @@ All static data lives in `lib/data.js` as named ES module exports:
 
 ```js
 export const WIGGLE_CONFIG = {
-    logoTruus:  4,  // The navbar Truus logo
+    logoBz:     4,  // The navbar Bulusan Zootopia logo
     socials:    5,  // LinkedIn / Instagram / TikTok icons
     jobHeading: 1,  // "not hiring right now" heading
     googleMap:  1,  // Google Maps link text
-    email:      1,  // hello@truus.co
+    email:      1,  // hello@bulusanzootopia.com
     whatsapp:   1,  // send us a whatsapp
 };
 ```
@@ -222,7 +222,7 @@ This project uses Next.js, so you need Node.js installed.
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/Thakuma07/Truus.co-Awwward-Website.git
-   cd truus
+   cd bulusan-zootopia
    ```
 
 2. **Install dependencies**:
@@ -248,4 +248,4 @@ Made with ❤️ by **Arkyadeep Pal**, **Soumyakanta Mitra** and **Anshu Ram**, 
 
 ## 📄 License
 
-This project is for educational and portfolio purposes. All original brand assets belong to Truus.co.
+This project is for educational and portfolio purposes. All original brand assets belong to their respective owners.

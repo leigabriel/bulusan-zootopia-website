@@ -88,7 +88,7 @@
         margin-left: 52px;
     }
 
-    .nav-bar__whatsapp-svg {
+    .nav-bar__download-svg {
         width: 26px;
     }
 
@@ -130,7 +130,7 @@
         font-size: 1.2rem;
     }
 
-    .nav-wa-desc {
+    .nav-download-desc {
         margin-bottom: 18px;
     }
 
@@ -336,39 +336,50 @@
     }
 
     /* ── Footer Stickers (mobile) ──── */
+    /* footer-bottom is only as tall as the wordmark on mobile (~85px), so
+       % positions clumped all stickers into that strip behind the
+       wordmark/credits. Anchor the sticker layer to the whole footer. */
+    .footer-stickers {
+        top: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        height: 100%;
+    }
+
     .sticker-boom {
         left: 2%;
-        bottom: 10%;
+        bottom: 18%;
         width: 90px;
     }
 
     .sticker-smiley {
-        left: 30%;
-        bottom: 5%;
+        left: 26%;
+        bottom: 8%;
         width: 90px;
     }
 
     .sticker-heart {
-        left: 50%;
-        bottom: 18%;
+        left: 44%;
+        bottom: 22%;
         width: 85px;
     }
 
     .footer-sticker.sticker-hands {
-        left: 42%;
-        bottom: 16%;
+        left: 36%;
+        bottom: 12%;
         width: 90px;
     }
 
     .footer-sticker.sticker-100 {
-        left: 72%;
-        bottom: 20%;
+        left: 62%;
+        bottom: 26%;
         width: 80px;
     }
 
     .footer-sticker.sticker-camera {
-        right: 8%;
-        bottom: 24%;
+        right: 4%;
+        bottom: 16%;
         width: 85px;
     }
 
@@ -435,10 +446,9 @@
         padding: 90px 18px 18px 18px;
     }
 
-    .nav-wa-qr {
-        width: 180px;
-        height: 180px;
-        top: -52px;
+    .nav-download-title {
+        font-size: 1.3rem;
+        margin-top: 28px;
     }
 
     .motion-card__floating-label {

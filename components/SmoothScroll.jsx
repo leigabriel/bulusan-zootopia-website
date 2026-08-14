@@ -12,7 +12,7 @@ export default function SmoothScroll() {
         // Dynamic Tab Title Change (all devices)
         const originalTitle = document.title;
         const handleVisibility = () => {
-            document.title = document.hidden ? "Hey, over here!👋 - Truus" : originalTitle;
+            document.title = document.hidden ? "Hey, over here!👋 - Bulusan Zootopia" : originalTitle;
         };
         document.addEventListener('visibilitychange', handleVisibility);
 

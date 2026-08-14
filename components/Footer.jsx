@@ -90,19 +90,28 @@ export default function Footer() {
         // ─── Footer sticker pop-up on scroll ───
         const footerStickers = gsap.utils.toArray('.footer-sticker');
         const stickerRotations = [12, -10, 8, -12, 10, -8];
-        gsap.set(footerStickers, { scale: 0, opacity: 0, transformOrigin: 'center bottom' });
-        footerStickers.forEach((sticker, i) => gsap.set(sticker, { rotation: stickerRotations[i % stickerRotations.length] }));
+        const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
 
-        gsap.to(footerStickers, {
-            scale: 1, opacity: 1,
-            rotation: (i) => stickerRotations[i % stickerRotations.length] * 0.7,
-            duration: 0.7, ease: 'back.out(1.7)', stagger: 0.12,
-            scrollTrigger: {
-                trigger: '.footer-stickers',
-                start: 'top 80%',
-                toggleActions: 'play none none reverse' // Play on enter, reverse on leave up
-            }
-        });
+        if (isTouch) {
+            // Touch devices: show stickers immediately — the scroll-triggered
+            // pop can stay hidden on mobile (rubber-band scroll, no hover).
+            gsap.set(footerStickers, { scale: 1, opacity: 1 });
+            footerStickers.forEach((sticker, i) => gsap.set(sticker, { rotation: stickerRotations[i % stickerRotations.length] * 0.7 }));
+        } else {
+            gsap.set(footerStickers, { scale: 0, opacity: 0, transformOrigin: 'center bottom' });
+            footerStickers.forEach((sticker, i) => gsap.set(sticker, { rotation: stickerRotations[i % stickerRotations.length] }));
+
+            gsap.to(footerStickers, {
+                scale: 1, opacity: 1,
+                rotation: (i) => stickerRotations[i % stickerRotations.length] * 0.7,
+                duration: 0.7, ease: 'back.out(1.7)', stagger: 0.12,
+                scrollTrigger: {
+                    trigger: '.footer-stickers',
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse' // Play on enter, reverse on leave up
+                }
+            });
+        }
 
         // ─── Sticker cursor-velocity push ───
         footerStickers.forEach((sticker, i) => {
@@ -179,7 +188,7 @@ export default function Footer() {
                 {/* Contact */}
                 <div className="footer-column">
                     <span className="footer-badge">contact</span>
-                    <a href="mailto:hello@truus.co" className="footer-email">hello@truus.co</a>
+                    <a href="mailto:hello@bulusanzootopia.com" className="footer-email">hello@bulusanzootopia.com</a>
                     <a href="#" className="footer-whatsapp">send us a whatsapp*</a>
                     <p className="footer-note">*we&apos;re millennials and gen-z: please do not call us.</p>
                     <div className="footer-socials" id="footer-socials">

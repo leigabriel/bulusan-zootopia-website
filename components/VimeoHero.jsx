@@ -209,7 +209,7 @@ export default function VimeoHero() {
                         <div style={{ flexBasis: '100%', height: 0 }} />
 
                         <span className="vimeo-hero__word">the </span>
-                        <span className="vimeo-hero__word">wild side </span>
+                        <span className="vimeo-hero__word">wild side, </span>
 
                         <span className="vimeo-hero__word is--relative">
                             <div className="home-header__star">
@@ -228,7 +228,7 @@ export default function VimeoHero() {
                                 className="home-header__title-line-svg"
                             />
 
-                            <span>of nature</span>
+                            <span>feed the animals</span>
                         </span>
 
                     </h1>

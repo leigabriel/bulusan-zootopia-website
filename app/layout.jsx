@@ -1,10 +1,10 @@
 import './globals.css';
 
 export const metadata = {
-    title: 'Truus — We make advertising for you',
-    description: 'Truus is a creative advertising agency specialising in brand strategy, social media, video production, and activations.',
+    title: 'Bulusan Zootopia',
+    description: 'Bulusan Zootopia is a nature exploration game where you can explore the wild, discover animals, and feed them treats.',
     icons: {
-        icon: 'https://cdn.prod.website-files.com/683703490bc01e1b8c052e06/68381362603d6402ee03c00e_favicon.png',
+        icon: '/bz-url-logo.png',
     },
 };
 

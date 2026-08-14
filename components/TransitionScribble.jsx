@@ -6,11 +6,11 @@ import { ANIMATION_CONFIG } from '@/lib/data';
 
 export default function TransitionScribble() {
     useEffect(() => {
-        const logoTruusClickable = document.querySelector('.logo-bz');
+        const logoBzClickable = document.querySelector('.logo-bz');
         const transitionScribblePath = document.querySelector('.transition-scribble path');
         const transitionScribbleSvg = document.querySelector('.transition-scribble');
 
-        if (!logoTruusClickable || !transitionScribblePath || !transitionScribbleSvg) return;
+        if (!logoBzClickable || !transitionScribblePath || !transitionScribbleSvg) return;
 
         const transitionColors = [
             'var(--color-green)', 'var(--color-lightblue)', 'var(--color-darkblue)',
@@ -95,13 +95,13 @@ export default function TransitionScribble() {
             }, durIn + (durOut * 0.48));
         };
 
-        logoTruusClickable.addEventListener('click', runScribbleAnimation);
+        logoBzClickable.addEventListener('click', runScribbleAnimation);
 
         // Auto-run on load
         const timer = setTimeout(() => runScribbleAnimation(null), 100);
 
         return () => {
-            logoTruusClickable.removeEventListener('click', runScribbleAnimation);
+            logoBzClickable.removeEventListener('click', runScribbleAnimation);
             clearTimeout(timer);
         };
     }, []);
