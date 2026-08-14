@@ -37,7 +37,7 @@ const HorizontalWords = () => {
                 scrollTrigger: {
                     trigger: container,
                     start: "top top", // Begin the pinning when the container reaches the top
-                    end: "+=3000", // The scroll duration distance
+                    end: window.innerWidth <= 768 ? "+=2000" : "+=3000", // The scroll duration distance
                     scrub: 1,
                     pin: true
                 }

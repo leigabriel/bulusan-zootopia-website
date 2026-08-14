@@ -1,26 +1,47 @@
+/* ─── Responsive — Tablet + Mobile ─────────────────────────────────────────
+   All breakpoints live here.
+   Order matters: later blocks win at overlapping widths.
+───────────────────────────────────────────────────────────────────────────── */
+
 /* ─── Tablet (769px – 1200px) ────────────────────────────────────────────── */
 @media (min-width: 769px) and (max-width: 1200px) {
-    .cards-wrapper {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-        padding-bottom: 50px;
-        gap: 30px;
-        overflow: visible;
+
+    /* ── Motion cards: scale headings down on tablet ── */
+    .motion-card__title {
+        font-size: clamp(4rem, 9vw, 7rem);
     }
 
-    .card {
-        position: relative;
-        left: auto !important;
-        top: auto !important;
-        transform: none !important;
-        width: 90%;
-        max-width: 400px;
+    .motion-card__subtitle {
+        font-size: clamp(4.2rem, 8vw, 7.5rem);
+    }
+
+    /* ── Motion cards: slightly larger on tablet ── */
+    .motion-card__card {
+        width: 21vw;
+        height: 27vw;
+    }
+
+    /* ── Motion cards: keep the blob centered behind the cards ── */
+    .motion-card__blob {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: min(560px, 62vw);
         height: auto;
-        min-height: 400px;
-        margin-bottom: 20px;
+        aspect-ratio: 580 / 500;
+    }
+
+    /* ── Navbar popouts: fixed 500px box clips the button at tablet sizes ── */
+    .nav-left .nav-popout,
+    .nav-right .nav-popout {
+        height: auto;
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .nav-work-btn {
+        margin-top: 40px;
     }
 }
 
@@ -48,6 +69,9 @@
     /* ── Navbar ─────────────────────── */
     .navbar {
         padding: 14px 16px;
+        padding-top: calc(14px + env(safe-area-inset-top, 0px));
+        padding-left: max(16px, env(safe-area-inset-left, 0px));
+        padding-right: max(16px, env(safe-area-inset-right, 0px));
     }
 
     .logo-bz {
@@ -68,6 +92,48 @@
         width: 26px;
     }
 
+    .nav-left .nav-popout,
+    .nav-right .nav-popout {
+        max-width: calc(100vw - 24px);
+        height: auto;
+        max-height: calc(100svh - 90px);
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-left .nav-popout-inner {
+        padding: 90px 20px 20px;
+    }
+
+    .nav-right .nav-popout-inner {
+        padding: 90px 20px 20px;
+    }
+
+    .nav-work-item {
+        gap: 12px;
+    }
+
+    .nav-work-item__img-wrap {
+        width: 62px;
+        height: 62px;
+    }
+
+    .nav-work-title {
+        font-size: 1.15rem;
+        margin-top: 24px;
+    }
+
+    .nav-work-btn {
+        margin-top: 24px;
+        padding: 14px;
+        font-size: 1.2rem;
+    }
+
+    .nav-wa-desc {
+        margin-bottom: 18px;
+    }
+
     /* ── Header Hero ────────────────── */
     .header-content {
         height: 100svh;
@@ -79,140 +145,150 @@
         font-size: 2rem;
     }
 
+    /* ── Vimeo Hero ─────────────────── */
+    .vimeo-hero {
+        height: calc(100vh - 12px);
+        height: calc(100svh - 12px);
+        margin: 6px auto;
+        border-radius: 16px;
+    }
+
+    .home-header__title {
+        bottom: 100px;
+        padding: 0 20px;
+    }
+
+    .vimeo-hero__title {
+        font-size: clamp(1.85rem, 8.5vw, 2.8rem);
+        letter-spacing: -1px;
+        line-height: 1.05;
+        gap: 0 0.2em;
+    }
+
+    .vimeo-hero__controls {
+        bottom: 22px;
+        left: 20px;
+        gap: 8px;
+    }
+
+    .vimeo-hero__btn {
+        width: 40px;
+        height: 40px;
+    }
+
     /* ── Content / Hero Title ───────── */
     .content-section {
         padding: 80px 0 0;
         overflow: visible;
     }
 
-    .main-title {
-        font-size: 3rem;
+    /* ── Motion Cards ───────────────── */
+    .motion-card-section {
+        padding: 70px 20px 80px;
+    }
+
+    .motion-card__heading {
+        margin-bottom: 40px;
+    }
+
+    .motion-card__title {
+        font-size: clamp(2.6rem, 11vw, 4rem);
         letter-spacing: -2px;
     }
 
-    .title-underline-svg {
-        width: 100px;
-        bottom: -10px;
+    .motion-card__subtitle {
+        font-size: clamp(2.3rem, 10vw, 3.6rem);
+        top: 0;
+        letter-spacing: -1px;
+        line-height: 1.1;
     }
 
-    .title-container {
-        margin-bottom: 50px;
+    .motion-card__sticker--top {
+        width: 88px;
+        height: 46px;
+        right: -12px;
+        top: -14px;
     }
 
-    /* ── Cards (GSAP-controlled) ─────── */
-    .cards-wrapper {
-        position: relative !important;
-        display: block !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-        overflow: visible !important;
+    .motion-card__underline-svg {
+        max-width: 90%;
+        margin-top: 10px;
     }
 
-    .card {
-        width: 82vw;
-        max-width: 340px;
-        min-height: 420px;
-        height: auto;
+    .motion-card__cards-area {
+        height: calc(112vw + 20px);
+        margin: 30px auto 50px;
     }
 
-    .card-sticker {
-        pointer-events: none;
-    }
-
-    /* ── Double Marquee ─────────────── */
-    .Double-marquee {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 60px 24px 0;
-        gap: 0;
-        min-height: unset;
-    }
-
-    .marquee-left {
-        max-width: 100%;
-        width: 100%;
-        justify-content: flex-start;
-        align-items: flex-start;
-        min-height: 340px;
-    }
-
-    .marquee-text-container {
-        text-align: left;
-    }
-
-    .marquee-left h2 {
-        font-size: 2.6rem;
-        letter-spacing: -1.5px;
-        margin-bottom: 0;
-        margin-right: 0;
-    }
-
-    .marquee-blob-container {
-        width: 240px;
-        height: 280px;
-        top: 45%;
-        left: 20%;
-    }
-
-    .marquee-svg-item:nth-child(1) {
-        width: 60px;
-        bottom: 10%;
-        left: 55%;
-    }
-
-    .marquee-svg-item:nth-child(2) {
-        width: 220px;
-        bottom: -5%;
-        left: 55%;
-    }
-
-    .marquee-underline {
-        top: 5rem;
-        right: auto;
-        left: 9.5rem;
-        width: 70px;
-    }
-
-    /* ── Logo columns → 2-row horizontal scroll grid ── */
-    .marquee-right {
+    .motion-card__cards {
         display: grid;
-        grid-template-rows: 130px 130px;
-        grid-auto-flow: column;
-        grid-auto-columns: 130px;
-        gap: 8px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        align-items: stretch;
+    }
+
+    .motion-card__card {
         width: 100%;
-        height: auto;
-        margin-right: 0;
-        padding: 20px 24px 32px;
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
+        height: 54vw;
+        margin: 0;
+        left: 0;
+        bottom: 0;
     }
 
-    .marquee-right::-webkit-scrollbar {
-        display: none;
+    .motion-card__card--1 {
+        transform: rotate(-4deg);
     }
 
-    .marquee-column {
-        display: contents;
+    .motion-card__card--2 {
+        transform: rotate(3deg);
     }
 
-    .marquee-column::before,
-    .marquee-column::after {
-        display: none;
+    .motion-card__card--3 {
+        transform: rotate(-3deg);
     }
 
-    .marquee-column:nth-child(1) .marquee-track,
-    .marquee-column:nth-child(2) .marquee-track {
-        display: contents;
-        animation: none;
+    .motion-card__card--4 {
+        transform: rotate(4deg);
     }
 
-    .marquee-item {
-        width: 130px;
-        height: 130px;
-        flex-shrink: 0;
+    .motion-card__blob {
+        width: 290px;
+        height: 250px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.85;
+    }
+
+    .motion-card__floating-label {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .motion-card__floating-label--pink {
+        top: 9%;
+        left: 34%;
+    }
+
+    .motion-card__floating-label--orange {
+        top: 52%;
+        left: 42%;
+    }
+
+    .motion-card__floating-label--red {
+        top: 90%;
+        left: 55%;
+    }
+
+    .motion-card__description {
+        font-size: 1.15rem;
+    }
+
+    /* ── Horizontal Words (overrides live in horizontal-words.css) ── */
+    .horizontal-words-section {
+        /* .content-section adds top padding — the pinned section must be
+           full-height and un-padded so centering + pin spacing stay exact */
+        padding: 0 !important;
     }
 
     /* ── Footer ─────────────────────── */
@@ -223,6 +299,7 @@
     .footer-inner {
         padding: 50px 20px 30px;
         border-radius: 14px;
+        min-height: 100vh;
         min-height: 100svh;
     }
 
@@ -242,6 +319,7 @@
 
     .footer-email {
         font-size: 1.3rem;
+        word-break: break-word;
     }
 
     .footer-whatsapp {
@@ -251,6 +329,10 @@
 
     .footer-map-link {
         font-size: 0.95rem;
+    }
+
+    .footer-note {
+        font-size: 0.9rem;
     }
 
     /* ── Footer Stickers (mobile) ──── */
@@ -273,8 +355,8 @@
     }
 
     .footer-sticker.sticker-hands {
-        left: 60%;
-        bottom: 2%;
+        left: 42%;
+        bottom: 16%;
         width: 90px;
     }
 
@@ -285,8 +367,8 @@
     }
 
     .footer-sticker.sticker-camera {
-        right: 2%;
-        bottom: 8%;
+        right: 8%;
+        bottom: 24%;
         width: 85px;
     }
 
@@ -321,5 +403,146 @@
 
     .credits-name {
         font-size: 0.95rem;
+    }
+
+    .credits-content {
+        gap: 20px;
+        padding: 22px 16px;
+    }
+}
+
+/* ─── Small phones (≤ 420px) ─────────────────────────────────────────────── */
+@media (max-width: 420px) {
+    .logo-bz {
+        width: 88px;
+    }
+
+    .logo-work-container {
+        width: 44px;
+        height: 40px;
+    }
+
+    .logo-work-text {
+        font-size: 1.25rem;
+        margin-left: 46px;
+    }
+
+    .nav-left .nav-popout-inner {
+        padding: 90px 18px 18px 18px;
+    }
+
+    .nav-right .nav-popout-inner {
+        padding: 90px 18px 18px 18px;
+    }
+
+    .nav-wa-qr {
+        width: 180px;
+        height: 180px;
+        top: -52px;
+    }
+
+    .motion-card__floating-label {
+        font-size: 0.72rem;
+        padding: 0.18rem 0.55rem;
+    }
+
+    .motion-card__floating-label--pink {
+        top: 9%;
+        left: 40%;
+    }
+
+    .motion-card__floating-label--orange {
+        top: 52%;
+        left: 46%;
+    }
+
+    .motion-card__floating-label--red {
+        top: 90%;
+        left: 58%;
+    }
+
+    .motion-card__cards-area {
+        height: calc(116vw + 20px);
+    }
+
+    .motion-card__card {
+        height: 56vw;
+    }
+}
+
+/* ─── Short landscape screens (phones/tablets rotated) ───────────────────── */
+@media (max-width: 900px) and (max-height: 480px) and (orientation: landscape) {
+    .navbar {
+        padding: calc(8px + env(safe-area-inset-top, 0px)) 16px 8px;
+    }
+
+    .logo-bz {
+        width: 84px;
+    }
+
+    .logo-work-container {
+        width: 40px;
+        height: 36px;
+    }
+
+    .logo-work-text {
+        font-size: 1.15rem;
+        margin-left: 44px;
+    }
+
+    /* Vimeo hero: compact title + controls so nothing clips */
+    .vimeo-hero {
+        height: calc(100svh - 12px);
+        border-radius: 14px;
+    }
+
+    .vimeo-hero__title {
+        font-size: clamp(1.3rem, 6.5vw, 2rem);
+        letter-spacing: -0.5px;
+        line-height: 1.1;
+        gap: 0 0.15em;
+    }
+
+    .home-header__title {
+        bottom: 58px;
+        padding: 0 14px;
+    }
+
+    .vimeo-hero__controls {
+        bottom: 14px;
+        left: 14px;
+        gap: 6px;
+    }
+
+    .vimeo-hero__btn {
+        width: 34px;
+        height: 34px;
+    }
+
+    /* Horizontal words: bring bottom text up so it never clips */
+    .horizontal-words__bottom-text {
+        transform: translate(-50%, 4.5em);
+    }
+
+    .horizontal-words__bottom-text-l {
+        max-width: 70vw;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .horizontal-words__h2 {
+        font-size: 7vw;
+    }
+}
+
+/* ─── Touch devices — kill mouse-only UI ─────────────────────────────────── */
+@media (hover: none) {
+    .cursor-bubble,
+    .vimeo-mute-bubble {
+        display: none !important;
+    }
+
+    body {
+        cursor: auto;
     }
 }

@@ -116,3 +116,20 @@
     z-index: 2;
     white-space: nowrap;
 }
+
+@media (max-width: 768px) {
+    .horizontal-words-section {
+        height: 100svh;
+    }
+
+    .horizontal-words__bottom-text {
+        transform: translate(-50%, 7em);
+        width: auto;
+    }
+
+    .horizontal-words__bottom-text-l {
+        max-width: 88vw;
+        font-size: 1.05rem;
+        line-height: 1.45;
+    }
+}

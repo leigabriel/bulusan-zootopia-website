@@ -28,6 +28,9 @@ export default function Navbar() {
         const contentSection = document.querySelector('.content-section');
         const footerEl = document.querySelector('.main-footer');
 
+        // Touch devices can't hover — popouts open on tap instead
+        const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
         // ② Start white (on-dark) — video is dark background
         if (navbar) { navbar.classList.add('on-dark'); navbar.classList.remove('on-light'); }
 
@@ -35,26 +38,12 @@ export default function Navbar() {
             if (!navbar || !contentSection || !footerEl) return;
             const scrollPos = window.scrollY + navbar.offsetHeight / 2;
             const contentTop = contentSection.getBoundingClientRect().top + window.scrollY;
-
-            const showreelSection = document.querySelector('#showreel-section');
-            const showreelTop = showreelSection ? showreelSection.getBoundingClientRect().top + window.scrollY : Infinity;
-
-            const serviceCardsSection = document.querySelector('.service-cards-wrapper');
-            const serviceCardsTop = serviceCardsSection ? serviceCardsSection.getBoundingClientRect().top + window.scrollY : Infinity;
-
-            const doubleMarquee = document.querySelector('.Double-marquee');
-            const doubleMarqueeTop = doubleMarquee ? doubleMarquee.getBoundingClientRect().top + window.scrollY : Infinity;
             const footerTop = footerEl.getBoundingClientRect().top + window.scrollY;
 
-            if (scrollPos >= footerTop) {
-                navbar.classList.add('on-dark'); navbar.classList.remove('on-light');
-            } else if (scrollPos >= doubleMarqueeTop) {
-                navbar.classList.add('on-light'); navbar.classList.remove('on-dark');
-            } else if (scrollPos >= serviceCardsTop) {
-                navbar.classList.add('on-light'); navbar.classList.remove('on-dark');
-            } else if (scrollPos >= showreelTop) {
-                navbar.classList.add('on-dark'); navbar.classList.remove('on-light');
-            } else if (scrollPos >= contentTop) {
+            // Hero video is dark → light navbar text. Everything below it
+            // (horizontal words, motion cards, footer) has a light background
+            // → dark navbar text.
+            if (scrollPos >= contentTop || scrollPos >= footerTop) {
                 navbar.classList.add('on-light'); navbar.classList.remove('on-dark');
             } else {
                 navbar.classList.add('on-dark'); navbar.classList.remove('on-light');
@@ -118,6 +107,7 @@ export default function Navbar() {
                 gsap.killTweensOf(workItems);
                 gsap.killTweensOf(workBlob);
                 showOverlay();
+                if (isTouch) gsap.set(workBox, { pointerEvents: 'auto' });
 
                 // Fast 360 blob spin — like it's spinning then releasing the box
                 gsap.to(workBlob, { rotation: '+=360', duration: 0.7, ease: 'power3.inOut' });
@@ -137,6 +127,7 @@ export default function Navbar() {
                 gsap.killTweensOf(workItems);
                 gsap.killTweensOf(workBlob);
                 hideOverlay();
+                if (isTouch) gsap.set(workBox, { pointerEvents: 'none' });
 
                 gsap.to(workBlob, { rotation: 0, duration: 0.5, ease: 'power2.out' });
 
@@ -153,12 +144,34 @@ export default function Navbar() {
                 });
             };
 
-            navLeft.addEventListener('mouseenter', onEnterLeft);
-            navLeft.addEventListener('mouseleave', onLeaveLeft);
-            cleanups.push(() => {
-                navLeft.removeEventListener('mouseenter', onEnterLeft);
-                navLeft.removeEventListener('mouseleave', onLeaveLeft);
-            });
+            if (isTouch) {
+                let leftOpen = false;
+                const onLeftTap = (e) => {
+                    e.stopPropagation();
+                    if (e.target.closest('.nav-popout')) return;
+                    if (leftOpen) { onLeaveLeft(); } else { onEnterLeft(); }
+                    leftOpen = !leftOpen;
+                };
+                const onDocTap = (e) => {
+                    if (leftOpen && !navLeft.contains(e.target)) {
+                        onLeaveLeft();
+                        leftOpen = false;
+                    }
+                };
+                navLeft.addEventListener('click', onLeftTap);
+                document.addEventListener('click', onDocTap);
+                cleanups.push(() => {
+                    navLeft.removeEventListener('click', onLeftTap);
+                    document.removeEventListener('click', onDocTap);
+                });
+            } else {
+                navLeft.addEventListener('mouseenter', onEnterLeft);
+                navLeft.addEventListener('mouseleave', onLeaveLeft);
+                cleanups.push(() => {
+                    navLeft.removeEventListener('mouseenter', onEnterLeft);
+                    navLeft.removeEventListener('mouseleave', onLeaveLeft);
+                });
+            }
         }
 
         // ─── Navbar Right (WhatsApp) Hover ───
@@ -193,6 +206,7 @@ export default function Navbar() {
                 gsap.killTweensOf(waBox);
                 gsap.killTweensOf(waItems);
                 showOverlay();
+                if (isTouch) gsap.set(waBox, { pointerEvents: 'auto' });
                 if (waSvgPath) gsap.to(waSvgPath, { fill: '#0e6634ff', duration: 0.3 }); // Darker WA green
 
                 gsap.set(waBox, { visibility: 'visible' });
@@ -209,6 +223,7 @@ export default function Navbar() {
                 gsap.killTweensOf(waBox);
                 gsap.killTweensOf(waItems);
                 hideOverlay();
+                if (isTouch) gsap.set(waBox, { pointerEvents: 'none' });
                 if (waSvgPath) gsap.to(waSvgPath, { fill: 'currentColor', duration: 0.3 });
 
                 // Items fade quickly
@@ -224,12 +239,34 @@ export default function Navbar() {
                 });
             };
 
-            navRight.addEventListener('mouseenter', onEnterRight);
-            navRight.addEventListener('mouseleave', onLeaveRight);
-            cleanups.push(() => {
-                navRight.removeEventListener('mouseenter', onEnterRight);
-                navRight.removeEventListener('mouseleave', onLeaveRight);
-            });
+            if (isTouch) {
+                let rightOpen = false;
+                const onRightTap = (e) => {
+                    e.stopPropagation();
+                    if (e.target.closest('.nav-popout')) return;
+                    if (rightOpen) { onLeaveRight(); } else { onEnterRight(); }
+                    rightOpen = !rightOpen;
+                };
+                const onDocTap = (e) => {
+                    if (rightOpen && !navRight.contains(e.target)) {
+                        onLeaveRight();
+                        rightOpen = false;
+                    }
+                };
+                navRight.addEventListener('click', onRightTap);
+                document.addEventListener('click', onDocTap);
+                cleanups.push(() => {
+                    navRight.removeEventListener('click', onRightTap);
+                    document.removeEventListener('click', onDocTap);
+                });
+            } else {
+                navRight.addEventListener('mouseenter', onEnterRight);
+                navRight.addEventListener('mouseleave', onLeaveRight);
+                cleanups.push(() => {
+                    navRight.removeEventListener('mouseenter', onEnterRight);
+                    navRight.removeEventListener('mouseleave', onLeaveRight);
+                });
+            }
         }
 
         // ─── Work Item: badge wiggle + image tilt on hover ───
