@@ -8,8 +8,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 60px;
-    height: 55px;
+    width: 34px;
+    height: 31px;
+    text-decoration: none;
+    color: var(--color-black);
 }
 
 .nav-bar__work-blob-svg {
@@ -27,10 +29,15 @@
     font-family: 'Epilogue', sans-serif;
     font-weight: 800;
     font-size: 2rem;
-    margin-left: 60px;
-    color: inherit;
+    margin-left: 36px;
+    color: var(--color-black) !important;
     letter-spacing: -0.5px;
     transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.on-dark .logo-work-container,
+.navbar.on-dark .logo-work-text {
+    color: var(--color-white) !important;
 }
 
 .navbar {
@@ -131,7 +138,7 @@
     margin: 0;
 }
 
-/* --- Left Popout (Work) --- */
+/* --- Left Popout (Home) --- */
 .nav-left .nav-popout {
     top: 8px;
     left: -8px;

@@ -149,6 +149,7 @@ export default function Navbar() {
                 const onLeftTap = (e) => {
                     e.stopPropagation();
                     if (e.target.closest('.nav-popout')) return;
+                    if (e.target.closest('a')) return;
                     if (leftOpen) { onLeaveLeft(); } else { onEnterLeft(); }
                     leftOpen = !leftOpen;
                 };
@@ -334,42 +335,42 @@ export default function Navbar() {
             <nav className="navbar">
                 <div className="nav-left" style={{ cursor: "url('/assets/Cursor SVG/cursor-pointer.svg') 12 12, pointer" }}>
                     <div className="nav-hover-trigger">
-                        <div className="logo-work-container">
+                        <a href="https://bulusanzoo.vercel.app" target="_blank" rel="noopener noreferrer" className="logo-work-container">
                             <img src="/assets/Navbar SVG/nav-work-blob.svg" width="60" height="55" className="nav-bar__work-blob-svg" alt="" aria-hidden="true" />
-                            <span className="logo-work-text">work</span>
-                        </div>
+                            <span className="logo-work-text">home</span>
+                        </a>
 
                         {/* Pop-out Box for Left Side */}
                         <div className="nav-popout nav-work-box">
                             <div className="nav-popout-inner">
-                                <div className="nav-work-item">
+                                <a href="https://bulusanzoo.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-work-item">
                                     <div className="nav-work-item__img-wrap">
-                                        <img src="https://cdn.prod.website-files.com/683863cbe1f5a81b667b9939/68a46f25779a71fac3a11903_SnapInsta.jpg" loading="eager" alt="Feestje bouwe? App Douwe" className="nav-work-item__img" />
+                                        <img src="/assets/Footer-Sticker SVG/footer-sticker-smiley.svg" loading="eager" alt="Explore nature" className="nav-work-item__img" />
                                     </div>
                                     <div className="nav-work-item__text">
-                                        <span className="nav-work-badge badge-maroon">douwe egberts</span>
-                                        <h4 className="nav-work-title">feestje bouwe? app douwe</h4>
+                                        <span className="nav-work-badge badge-maroon">game</span>
+                                        <h4 className="nav-work-title">explore nature</h4>
                                     </div>
-                                </div>
-                                <div className="nav-work-item">
+                                </a>
+                                <a href="https://bulusanzoo.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-work-item">
                                     <div className="nav-work-item__img-wrap">
-                                        <img src="https://cdn.prod.website-files.com/683863cbe1f5a81b667b9939/6880a344675f3a6144ed04df_01_HEMA_Back2School.avif" loading="eager" alt="Skibidi school" sizes="100vw" srcSet="https://cdn.prod.website-files.com/683863cbe1f5a81b667b9939/6880a344675f3a6144ed04df_01_HEMA_Back2School-p-500.avif 500w, https://cdn.prod.website-files.com/683863cbe1f5a81b667b9939/6880a344675f3a6144ed04df_01_HEMA_Back2School.avif 1080w" className="nav-work-item__img" />
+                                        <img src="/assets/Footer-Sticker SVG/footer-sticker-heart.svg" loading="eager" alt="Feed the animals" className="nav-work-item__img" />
                                     </div>
                                     <div className="nav-work-item__text">
-                                        <span className="nav-work-badge badge-pink">hema</span>
-                                        <h4 className="nav-work-title">skibidi school</h4>
+                                        <span className="nav-work-badge badge-pink">animals</span>
+                                        <h4 className="nav-work-title">feed the animals</h4>
                                     </div>
-                                </div>
-                                <div className="nav-work-item">
+                                </a>
+                                <a href="https://bulusanzoo.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-work-item">
                                     <div className="nav-work-item__img-wrap">
-                                        <img src="https://cdn.prod.website-files.com/683863cbe1f5a81b667b9939/686b7e0ed3ab3045b28a2012_3.avif" loading="eager" alt="Hema socials" sizes="100vw" srcSet="https://cdn.prod.website-files.com/683863cbe1f5a81b667b9939/686b7e0ed3ab3045b28a2012_3-p-500.avif 500w, https://cdn.prod.website-files.com/683863cbe1f5a81b667b9939/686b7e0ed3ab3045b28a2012_3.avif 1080w" className="nav-work-item__img" />
+                                        <img src="/assets/Footer-Sticker SVG/footer-sticker-hands.svg" loading="eager" alt="Discover the wild side" className="nav-work-item__img" />
                                     </div>
                                     <div className="nav-work-item__text">
-                                        <span className="nav-work-badge badge-pink">hema</span>
-                                        <h4 className="nav-work-title">hema socials</h4>
+                                        <span className="nav-work-badge badge-maroon">wild</span>
+                                        <h4 className="nav-work-title">discover the wild side</h4>
                                     </div>
-                                </div>
-                                <a href="#" className="nav-work-btn"><span className="nav-work-btn__text">All our work</span></a>
+                                </a>
+                                <a href="https://bulusanzoo.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-work-btn"><span className="nav-work-btn__text">Visit the site</span></a>
                             </div>
                         </div>
                     </div>
