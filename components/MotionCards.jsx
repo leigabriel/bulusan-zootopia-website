@@ -165,7 +165,7 @@ export default function MotionCards() {
                     <div className="motion-card__card motion-card__card--1">
                         <div className="motion-card__card-image">
                             <img
-                                src="https://cdn.prod.website-files.com/683703490bc01e1b8c052e06/686b8e614494dac669a4099c_c310914b5a1a573b4c7499e9531f8d52_DE.avif"
+                                src="/assets/motion-img/1.png"
                                 loading="lazy"
                                 width={1000}
                                 height={1000}
@@ -178,7 +178,7 @@ export default function MotionCards() {
                     <div className="motion-card__card motion-card__card--2">
                         <div className="motion-card__card-image">
                             <img
-                                src="https://cdn.prod.website-files.com/683703490bc01e1b8c052e06/686b8e607142a7a25157d9dd_1875b9852ca289170917f9060c95b6a4_BolpuntJapie.avif"
+                                src="/assets/motion-img/2.png"
                                 loading="lazy"
                                 width={1000}
                                 height={1000}
@@ -191,7 +191,7 @@ export default function MotionCards() {
                     <div className="motion-card__card motion-card__card--3">
                         <div className="motion-card__card-image">
                             <img
-                                src="https://cdn.prod.website-files.com/683703490bc01e1b8c052e06/686b8e60ba19eb1109d3daa5_b1280272f47b3cd3ea25b91391935efa_RonaldoMassage.avif"
+                                src="/assets/motion-img/3.png"
                                 loading="lazy"
                                 width={1000}
                                 height={1000}
@@ -204,7 +204,7 @@ export default function MotionCards() {
                     <div className="motion-card__card motion-card__card--4">
                         <div className="motion-card__card-image">
                             <img
-                                src="https://cdn.prod.website-files.com/683703490bc01e1b8c052e06/686b8e607d351d1335f06e04_f1aafb2150d81c3990c906d901d2e7e4_Esprix.avif"
+                                src="/assets/motion-img/4.png"
                                 loading="lazy"
                                 width={1000}
                                 height={1000}

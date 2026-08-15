@@ -11,6 +11,14 @@
     font-weight: 100 900;
 }
 
+@font-face {
+    font-family: 'Signature Philosophy';
+    src: url('/fonts/SignaturePhilosophy.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ─── Design Tokens ─────────────────────────────────────────────────────────── */
 :root {
     --color-green: #29725f;

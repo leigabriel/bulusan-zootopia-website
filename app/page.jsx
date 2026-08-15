@@ -2,6 +2,7 @@
 
 import SvgSymbols from '@/components/SvgSymbols';
 import Navbar from '@/components/Navbar';
+import AssetCache from '@/components/AssetCache';
 import VimeoHero from '@/components/VimeoHero';
 import MotionCards from '@/components/MotionCards';
 import Footer from '@/components/Footer';
@@ -15,6 +16,7 @@ export default function Home() {
     return (
         <>
             <SvgSymbols />
+            <AssetCache />
             <SmoothScroll />
             <CursorBubble />
             <header className="main-header">

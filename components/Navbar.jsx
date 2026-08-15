@@ -149,7 +149,8 @@ export default function Navbar() {
                 const onLeftTap = (e) => {
                     e.stopPropagation();
                     if (e.target.closest('.nav-popout')) return;
-                    if (e.target.closest('a')) return;
+                    const homeLink = e.target.closest('a.logo-work-container');
+                    if (homeLink) e.preventDefault();
                     if (leftOpen) { onLeaveLeft(); } else { onEnterLeft(); }
                     leftOpen = !leftOpen;
                 };
@@ -380,6 +381,8 @@ export default function Navbar() {
     <g transform="matrix(1,0,0,1,-960.683427,-975.264902)">
         <g transform="matrix(0.861375,0,0,0.861375,652.040015,268.372295)">
             <text x="385.005px" y="1128.179px" style={{ fontFamily: "'SignaturePhilosophy', 'Signature Philosophy'", fontSize: '483.723px' }}>bulusan</text>
+            <g transform="matrix(483.722893,0,0,483.722893,2094.095946,1437.76203)">
+            </g>
             <text x="477.356px" y="1437.762px" style={{ fontFamily: "'SignaturePhilosophy', 'Signature Philosophy'", fontSize: '483.723px' }}>zootopia</text>
         </g>
     </g>
