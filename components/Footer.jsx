@@ -167,18 +167,19 @@ export default function Footer() {
             <div className="footer-top">
                 {/* Jobs */}
                 <div className="footer-column">
-                    <span className="footer-badge">looking for a job?</span>
-                    <h3>not hiring right now :(</h3>
+                    <span className="footer-badge">Play Now?</span>
+                    <a href="https://bulusan-mz.vercel.app" target="_blank" rel="noopener noreferrer" className="footer-play-link">
+                        <h3>click me</h3>
+                    </a>
                 </div>
                 {/* Office */}
                 <div className="footer-column">
-                    <span className="footer-badge">office</span>
+                    <span className="footer-badge">Join?</span>
                     <address>
-                        papaverhof 21<br />
-                        1032 LX amsterdam
+                        Download and Play<br />
                     </address>
                     <a href="#" className="footer-map-link">
-                        <span>Google Maps</span>
+                        <span></span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 169 10" fill="none" className="draw-btn__svg">
                             <path d="M1 6.5661C56.3941 3.06082 112.187 1.20095 168 0.999878" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25"></path>
                             <path d="M32.1313 8.63371C68.2147 6.92799 104.462 6.13378 140.695 6.25107" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25"></path>
@@ -189,8 +190,7 @@ export default function Footer() {
                 <div className="footer-column">
                     <span className="footer-badge">contact</span>
                     <a href="mailto:hello@bulusanzootopia.com" className="footer-email">hello@bulusanzootopia.com</a>
-                    <a href="#" className="footer-whatsapp">send us a whatsapp*</a>
-                    <p className="footer-note">*we&apos;re millennials and gen-z: please do not call us.</p>
+                    <a href="#" className="footer-whatsapp">send us a email*</a>
                     <div className="footer-socials" id="footer-socials">
                         {SOCIAL_ICONS.map(({ href, label, svg }) => (
                             <a
