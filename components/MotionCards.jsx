@@ -116,6 +116,47 @@ export default function MotionCards() {
                 gsap.set(underlinePath, { strokeDasharray: pathLen, strokeDashoffset: pathLen });
                 tl.to(underlinePath, { strokeDashoffset: 0, duration: 1.5, ease: "power2.out" }, 0.2);
             }
+
+            // Play button: idle pulse + wiggle to invite a click
+            const playLink = sectionRef.current.querySelector(".motion-card__play-link");
+            if (playLink) {
+                const idle = gsap.to(playLink, {
+                    scale: 1.05,
+                    rotation: 2,
+                    duration: 0.8,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                    paused: true
+                });
+                const onEnter = () => {
+                    idle.pause();
+                    gsap.to(playLink, { scale: 1.12, rotation: -3, duration: 0.25, ease: "power2.out" });
+                };
+                const onLeave = () => {
+                    gsap.to(playLink, { scale: 1, rotation: 0, duration: 0.4, ease: "power3.out", onComplete: () => idle.resume() });
+                };
+                playLink.addEventListener("mouseenter", onEnter);
+                playLink.addEventListener("mouseleave", onLeave);
+                gsap.delayedCall(1.2, () => idle.play());
+
+                const scrollTrigger = ScrollTrigger.create({
+                    trigger: sectionRef.current,
+                    start: "top 70%",
+                    once: true,
+                    onEnter: () => {
+                        gsap.fromTo(playLink,
+                            { scale: 0, opacity: 0, rotation: -8 },
+                            { scale: 1, opacity: 1, rotation: 0, duration: 0.9, ease: "back.out(1.8)" }
+                        );
+                    }
+                });
+                return () => {
+                    playLink.removeEventListener("mouseenter", onEnter);
+                    playLink.removeEventListener("mouseleave", onLeave);
+                    scrollTrigger.kill();
+                };
+            }
         }, sectionRef);
 
         return () => ctx.revert();
@@ -237,6 +278,23 @@ export default function MotionCards() {
                     treats. Wander through lush forests, meet the wildlife,
                     and make new furry friends along the way.
                 </p>
+            </div>
+
+            {/* ─── Play Button ─── */}
+            <div className="motion-card__play">
+                <a
+                    href="https://gamebulusanzootopia.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="motion-card__play-link"
+                    aria-label="Play Bulusan Zootopia"
+                >
+                    <img
+                        src="/play-button.png"
+                        alt="Play Bulusan Zootopia"
+                        className="motion-card__play-btn"
+                    />
+                </a>
             </div>
         </section>
     );

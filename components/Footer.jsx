@@ -165,45 +165,26 @@ export default function Footer() {
     return (
         <div className="footer-inner">
             <div className="footer-top">
-                {/* Jobs */}
+                {/* About */}
                 <div className="footer-column">
-                    <span className="footer-badge">Play Now?</span>
-                    <a href="https://bulusan-mz.vercel.app" target="_blank" rel="noopener noreferrer" className="footer-play-link">
-                        <h3>click me</h3>
-                    </a>
-                </div>
-                {/* Office */}
-                <div className="footer-column">
-                    <span className="footer-badge">Join?</span>
+                    <span className="footer-badge">about?</span>
                     <address>
-                        Download and Play<br />
+                        Explore Bulusan Zoo through a fun and interactive wildlife adventure.
                     </address>
-                    <a href="#" className="footer-map-link">
-                        <span></span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 169 10" fill="none" className="draw-btn__svg">
-                            <path d="M1 6.5661C56.3941 3.06082 112.187 1.20095 168 0.999878" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25"></path>
-                            <path d="M32.1313 8.63371C68.2147 6.92799 104.462 6.13378 140.695 6.25107" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25"></path>
-                        </svg>
-                    </a>
                 </div>
-                {/* Contact */}
+                {/* What can you do */}
                 <div className="footer-column">
-                    <span className="footer-badge">contact</span>
-                    <a href="mailto:hello@bulusanzootopia.com" className="footer-email">hello@bulusanzootopia.com</a>
-                    <a href="#" className="footer-whatsapp">send us a email*</a>
-                    <div className="footer-socials" id="footer-socials">
-                        {SOCIAL_ICONS.map(({ href, label, svg }) => (
-                            <a
-                                key={label}
-                                href={href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="single-social w-inline-block"
-                                aria-label={label}
-                                dangerouslySetInnerHTML={{ __html: svg }}
-                            />
-                        ))}
-                    </div>
+                    <span className="footer-badge">what can you do?</span>
+                    <address>
+                        explore · discover · learn · play
+                    </address>
+                </div>
+                {/* Ready */}
+                <div className="footer-column">
+                    <span className="footer-badge">ready?</span>
+                    <address>
+                        Download Bulusan Zootopia and start exploring.
+                    </address>
                 </div>
             </div>
 

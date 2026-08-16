@@ -284,6 +284,15 @@
         font-size: 1.15rem;
     }
 
+    .motion-card__play-btn {
+        max-width: 160px;
+    }
+
+    .motion-card__play::before {
+        width: 200px;
+        height: 200px;
+    }
+
     /* ── Horizontal Words (overrides live in horizontal-words.css) ── */
     .horizontal-words-section {
         /* .content-section adds top padding — the pinned section must be
