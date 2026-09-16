@@ -165,27 +165,24 @@ export default function Footer() {
     return (
         <div className="footer-inner">
             <div className="footer-top">
-                {/* About */}
-                <div className="footer-column">
+                {/* <div className="footer-column">
                     <span className="footer-badge">about?</span>
                     <address>
                         Explore Bulusan Zoo through a fun and interactive wildlife adventure.
                     </address>
                 </div>
-                {/* What can you do */}
                 <div className="footer-column">
                     <span className="footer-badge">what can you do?</span>
                     <address>
                         explore · discover · learn · play
                     </address>
                 </div>
-                {/* Ready */}
                 <div className="footer-column">
                     <span className="footer-badge">ready?</span>
                     <address>
                         Download Bulusan Zootopia and start exploring.
                     </address>
-                </div>
+                </div> */}
             </div>
 
             {/* Big BULUSAN wordmark */}

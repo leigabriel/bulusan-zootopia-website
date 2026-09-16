@@ -336,7 +336,7 @@ export default function Navbar() {
             <nav className="navbar">
                 <div className="nav-left" style={{ cursor: "url('/assets/Cursor SVG/cursor-pointer.svg') 12 12, pointer" }}>
                     <div className="nav-hover-trigger">
-                        <a href="https://bulusanzoo.vercel.app" target="_blank" rel="noopener noreferrer" className="logo-work-container">
+                        <a href="/" target="_blank" rel="noopener noreferrer" className="logo-work-container">
                             <img src="/assets/Navbar SVG/nav-work-blob.svg" width="60" height="55" className="nav-bar__work-blob-svg" alt="" aria-hidden="true" />
                             <span className="logo-work-text">home</span>
                         </a>
@@ -353,7 +353,7 @@ export default function Navbar() {
                                         <h4 className="nav-work-title">explore nature</h4>
                                     </div>
                                 </a>
-                                <a href="https://bulusanzoo.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-work-item">
+                                <a href="https://bulusanzoo.vercel.app/animals" target="_blank" rel="noopener noreferrer" className="nav-work-item">
                                     <div className="nav-work-item__img-wrap">
                                         <img src="/assets/Footer-Sticker SVG/footer-sticker-heart.svg" loading="eager" alt="Feed the animals" className="nav-work-item__img" />
                                     </div>
@@ -371,7 +371,7 @@ export default function Navbar() {
                                         <h4 className="nav-work-title">discover the wild side</h4>
                                     </div>
                                 </a>
-                                <a href="https://bulusanzoo.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-work-btn"><span className="nav-work-btn__text">Visit the site</span></a>
+                                <a href="https://bulusanzootopiaadventuregame.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-work-btn"><span className="nav-work-btn__text">Visit the site</span></a>
                             </div>
                         </div>
                     </div>
