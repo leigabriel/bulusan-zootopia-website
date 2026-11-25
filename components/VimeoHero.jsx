@@ -173,7 +173,7 @@ export default function VimeoHero() {
                 */}
                 <video
                     ref={iframeRef}
-                    src="/bulusan-mz.mp4"
+                    src="/hero-1080.mp4"
                     autoPlay
                     loop
                     muted
