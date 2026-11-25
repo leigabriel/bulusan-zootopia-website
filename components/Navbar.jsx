@@ -401,7 +401,12 @@ export default function Navbar() {
                             <div className="nav-popout-inner">
                                 <h4 className="nav-download-title">download the game</h4>
                                 <p className="nav-download-desc">Get Bulusan Zootopia on your device and start exploring nature, feeding animals, and discovering the wild.</p>
-                                <a href="#" className="nav-download-link">
+                                <a
+                                    href="https://pub-2e54fcfc02914be28064e5210d94f00b.r2.dev/master/Bulusan-Zootopia-Adventure-Game-4.5.apk"
+                                    download="Bulusan-Zootopia-Adventure-Game-4.5.apk"
+                                    rel="noopener noreferrer"
+                                    className="nav-download-link"
+                                >
                                     <span className="nav-download-link-text">Download now</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 169 10" fill="none" className="draw-btn__svg nav-download-link-svg">
                                         <path d="M1 6.5661C56.3941 3.06082 112.187 1.20095 168 0.999878" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.25" />
