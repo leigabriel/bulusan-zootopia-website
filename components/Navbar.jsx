@@ -344,7 +344,7 @@ export default function Navbar() {
                         {/* Pop-out Box for Left Side */}
                         <div className="nav-popout nav-work-box">
                             <div className="nav-popout-inner">
-                                <a href="https://bulusanzoo.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-work-item">
+                                <a href="https://bulusanzoo.com" target="_blank" rel="noopener noreferrer" className="nav-work-item">
                                     <div className="nav-work-item__img-wrap">
                                         <img src="/assets/Footer-Sticker SVG/footer-sticker-smiley.svg" loading="eager" alt="Explore nature" className="nav-work-item__img" />
                                     </div>
@@ -353,7 +353,7 @@ export default function Navbar() {
                                         <h4 className="nav-work-title">explore nature</h4>
                                     </div>
                                 </a>
-                                <a href="https://bulusanzoo.vercel.app/animals" target="_blank" rel="noopener noreferrer" className="nav-work-item">
+                                <a href="https://bulusanzoo.com/animals" target="_blank" rel="noopener noreferrer" className="nav-work-item">
                                     <div className="nav-work-item__img-wrap">
                                         <img src="/assets/Footer-Sticker SVG/footer-sticker-heart.svg" loading="eager" alt="Feed the animals" className="nav-work-item__img" />
                                     </div>
@@ -362,7 +362,7 @@ export default function Navbar() {
                                         <h4 className="nav-work-title">feed the animals</h4>
                                     </div>
                                 </a>
-                                <a href="https://bulusanzoo.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-work-item">
+                                <a href="https://bulusanzoo.com" target="_blank" rel="noopener noreferrer" className="nav-work-item">
                                     <div className="nav-work-item__img-wrap">
                                         <img src="/assets/Footer-Sticker SVG/footer-sticker-hands.svg" loading="eager" alt="Discover the wild side" className="nav-work-item__img" />
                                     </div>
