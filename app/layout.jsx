@@ -6,6 +6,25 @@ export const metadata = {
     icons: {
         icon: '/bz-url-logo.png',
     },
+    openGraph: {
+        title: 'Bulusan Zootopia',
+        description: 'Play our game and explore the wild side, feed the animals.',
+        type: 'website',
+        images: [
+            {
+                url: '/og-image.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Bulusan Zootopia hero — play our game and explore the wild side, feed the animals',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Bulusan Zootopia',
+        description: 'Play our game and explore the wild side, feed the animals.',
+        images: ['/og-image.jpg'],
+    },
 };
 
 export const viewport = {
