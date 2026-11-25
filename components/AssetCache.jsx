@@ -16,7 +16,7 @@ const ASSETS = [
     '/fonts/Epilogue-VariableFont_wght.ttf',
     '/fonts/DMSans-VariableFont_opsz,wght.ttf',
     '/bz-url-logo.png',
-    '/bulusan-mz.mp4',
+    '/hero-1080.mp4',
     '/assets/wa_qr_code.png',
     '/assets/Navbar SVG/nav-work-blob.svg',
     '/assets/Navbar SVG/nav-download.svg',
