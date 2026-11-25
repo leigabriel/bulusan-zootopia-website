@@ -283,7 +283,7 @@ export default function MotionCards() {
             {/* ─── Play Button ─── */}
             <div className="motion-card__play">
                 <a
-                    href="https://gamebulusanzootopia.vercel.app"
+                    href="https://adventuregame.bulusanzoo.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="motion-card__play-link"
