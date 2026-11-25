@@ -371,7 +371,7 @@ export default function Navbar() {
                                         <h4 className="nav-work-title">discover the wild side</h4>
                                     </div>
                                 </a>
-                                <a href="https://bulusanzootopiaadventuregame.vercel.app" target="_blank" rel="noopener noreferrer" className="nav-work-btn"><span className="nav-work-btn__text">Visit the site</span></a>
+                                <a href="https://adventuregame.bulusanzoo.com" target="_blank" rel="noopener noreferrer" className="nav-work-btn"><span className="nav-work-btn__text">Visit the site</span></a>
                             </div>
                         </div>
                     </div>
